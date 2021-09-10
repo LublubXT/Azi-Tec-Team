@@ -1,0 +1,19 @@
+body {
+    margin: 0px;
+    padding: 
+}
+
+.header {
+    max-width: 100%;
+    height: 600px;
+}
+
+.imgDiv {
+    background-color: rgb(170, 170, 170);
+    margin: 0px;
+}
+
+.imgText {
+    text-align: center;
+    color: white;
+}

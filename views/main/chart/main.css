@@ -1,0 +1,76 @@
+body {
+    font-family: "courier new";
+}
+
+canvas {
+    background-color: rgba(10, 10, 10, 0.801);
+    margin-bottom: 20px;
+    border-radius: 10px;
+}
+
+#chartDiv {
+    position: absolute;
+    z-index: 9;
+    overflow: auto;
+    resize: both;
+    width: 600px;
+    height: 400px;
+    padding: 10px;
+}
+
+
+::-webkit-scrollbar {
+    width: 2px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #888;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+.maind {
+    justify-content: center;
+}
+
+#data {
+    width: 75%;
+    padding: 10px;
+    outline: none;
+    background: -webkit-linear-gradient(right, #7bd4f7, #2d94bd);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-weight: bolder;
+}
+
+#dataBut {
+    width: 17%;
+    padding: 10px;
+    outline: none;
+    color: white;
+    border: none;
+    font-weight: 600%;
+    background: -webkit-linear-gradient(right, #7bd4f7, #2d94bd);
+    border-radius: 8px;
+}
+
+#dataBut:active {
+    width: 17%;
+    padding: 10px;
+    outline: none;
+    color: white;
+    font-weight: 600%;
+    border: none;
+    background: -webkit-linear-gradient(right, #64c6ec, #2189b3);
+    border-radius: 10px;
+}

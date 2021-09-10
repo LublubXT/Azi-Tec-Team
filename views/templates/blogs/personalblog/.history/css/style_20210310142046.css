@@ -1,0 +1,16 @@
+body {
+    margin: 0px;
+    padding: 0px;
+}
+
+.header {
+    max-width: 100%;
+    height: 600px;
+}
+
+.imgDiv {
+    margin: 0px;
+    background-image: url('https://www.start-business-online.com/images/article_manager_uploads/blog.jpg');
+    background-repeat: no-repeat;
+    background-size: ;
+}

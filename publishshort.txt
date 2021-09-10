@@ -1,0 +1,8 @@
+git init
+git add .
+git commit -m "sercewa"
+heroku login 
+heroku create azitecteam
+git add .
+git commit -m "aweygfcwe"
+git push heroku master

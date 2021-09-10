@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="en">
+
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="">
+        <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+        <meta name="generator" content="Hugo 0.80.0">
+        <title>Sign Up</title>
+
+        <link rel="shortcut icon" href="{{ url_for('static', filename='Img/Icon_2.0.png')}}" type="image/x-icon">
+
+        <link rel="canonical" href="https://getbootstrap.com/docs/5.0/examples/sign-in/">
+
+
+
+        <!-- Bootstrap core CSS -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+            integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+
+        <meta name="theme-color" content="#7952b3">
+
+
+        <style>
+            .bd-placeholder-img {
+                font-size: 1.125rem;
+                text-anchor: middle;
+                -webkit-user-select: none;
+                -moz-user-select: none;
+                user-select: none;
+            }
+
+            @media (min-width: 768px) {
+                .bd-placeholder-img-lg {
+                    font-size: 3.5rem;
+                }
+            }
+
+            .form-signin {
+                width: 300px;
+                margin: auto;
+                margin-top: 40px;
+            }
+
+            input {
+                margin-top: 5px;
+            }
+
+            body {
+                background-color: #f5f5f5;
+            }
+        </style>
+    </head>
+
+    <body class="text-center">
+        <main class="form-signin">
+            <form action="/signup" method="POST"><img class="mb-4" src="Img/Icon_2.0.png" alt="" width="100"
+                    height="100">
+                <h1 class="h3 mb-3 fw-normal">Sign Up for weekly news and updates!</h1>
+                <hr><label for="inputName" class="visually-hidden">First Name</label>
+                <input type="text" name="firstName" id="inputName" class="form-control" placeholder="Name" required>
+                <label for="inputName" class="visually-hidden">Last Name</label>
+                <input type="text" name="lastName" id="inputLName" class="form-control" placeholder="Last Name"
+                    required>
+                <label for="inputEmail" class="visually-hidden">Email address</label>
+                <input type="email" name="username" id="inputEmail" class="form-control" placeholder="Email address"
+                    required autofocus><br>
+                <button id="but" type="submit" class="w-100 btn btn-lg btn-secondary" onclick="window.alert('Thanks for
+                    Signing Up'!);">Sign Up</button>
+            </form>
+        </main>
+        <script src="https://smtpjs.com/v3/smtp.js"></script>
+        <script type="text/javascript">
+            var name = document.getElementById('inputName');
+            var email = document.getElementById('inputEmail');
+            var mess = document.getElementById('inputLName');
+            var agree = document.getElementById('all');
+            var update = document.getElementById('update');
+            var news = document.getElementById('new');
+            var offers = document.getElementById('offers');
+            var but = document.getElementById('but');
+            var signlink = document.getElementById('signlink');
+            var choice;
+
+            but.disabled = true;
+
+            but.className = "w-100 btn btn-lg btn-secondary";
+
+            var message = ""
+
+            function check() {
+                if (name.value != "" && email.value != "" && mess.value != "") {
+
+                    but.disabled = false;
+                    but.className = "w-100 btn btn-lg btn-primary";
+                } else {
+                    but.disabled = true;
+                    but.className = "w-100 btn btn-lg btn-secondary"
+                }
+            }
+
+            function send() {
+                if (name.value != "" && email.value != "" && mess.value != "" && agree.checked == true) {
+                    sendEmail();
+                }
+
+                else {
+                    alert("Please fill in the form...");
+
+                }
+            }
+
+            function sendEmail() {
+                if (agree.checked == true) {
+                    choice = "everything";
+                }
+
+                else if (news.checked == true) {
+                    choice = "news";
+                }
+
+                else if (update.checked == true) {
+                    choice = "updates";
+                }
+
+                else if (offers.checked == true) {
+                    choice = "offers";
+                }
+
+                var name = document.getElementById('inputName');
+                var email = document.getElementById('inputEmail');
+                var mess = document.getElementById('inputLName');
+
+                Email.send({
+                    SecureToken: "16c4aa54-a783-4157-a16e-7a8b039f37cd",
+                    To: 'aztecinc2021@gmail.com',
+                    From: "aztecinc2021@gmail.com",
+                    Subject: "New Subscriber",
+                    Body: "<h2>New Subscriber</h2><hr><h4>First Name: </h4>" + name.value + "<p></p><hr><h4>Last Name</h4>" + mess.value + "<p></p><hr><h4>Email: </h4>" + email.value + "<p></p><hr><h4>Choise</h4>" + choice + " <p></p><hr><p></p>",
+                }
+
+                )
+            }
+
+            setInterval(check, 100);
+        </script>
+    </body>
+
+</html>

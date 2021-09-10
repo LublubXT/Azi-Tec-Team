@@ -1,0 +1,24 @@
+body {
+    margin: 0px;
+    padding: 0px;
+}
+
+.header {
+    max-width: 100%;
+    height: 625px;
+}
+
+.imgDiv {
+    background-color: rgb(200, 200, 200);
+    margin: 0px;
+}
+
+.imgText {
+    text-align: center;
+    color: white;
+}
+
+.navbar {
+    background-color: black;
+    position: sticky;
+}
